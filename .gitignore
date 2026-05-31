@@ -1,0 +1,50 @@
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.glg
+*.glo
+*.gls
+*.idx
+*.ilg
+*.ind
+*.ist
+*.lof
+*.log
+*.lot
+*.nav
+*.out
+*.pyg
+*.run.xml
+*.snm
+*.synctex*
+*.toc
+*.vrb
+*.xdv
+
+# Generated PDFs (uncomment if you want to track specific PDFs)
+*.pdf
+build/
+preview_page-*.png
+preview_cover-*.png
+
+# Minted cache
+_minted*/
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# Claude Code local settings
+.claude/

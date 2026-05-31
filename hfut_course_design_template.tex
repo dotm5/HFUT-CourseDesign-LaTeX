@@ -1,0 +1,23 @@
+% !TEX program = xelatex
+% 合肥工业大学课程设计 LaTeX 模板
+% 编译方式：latexmk 或 xelatex 连续两次
+\documentclass{hfutcourse}
+
+% 基本信息与任务书内容
+\input{hfutsetup}
+
+\begin{document}
+
+% 封面、任务书表格页
+\HFUTCoverPage
+\HFUTTaskFormPage
+
+% 正文开始
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\input{contents/01-requirements}
+\input{contents/02-design}
+\input{contents/03-results}
+
+\end{document}

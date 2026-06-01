@@ -48,6 +48,7 @@ latexmkrc                        # 构建配置：latexmk 自动化编译
 \renewcommand{\HFUTMonth}{6}                   % 月
 \renewcommand{\HFUTDay}{20}                    % 日
 % \renewcommand{\HFUTScore}{90}                % 成绩（评出后取消注释）
+% \HFUTEnableCoverDate                         % 封面底部日期（默认不显示）
 ```
 
 ### 2. 填写正文

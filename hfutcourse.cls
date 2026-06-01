@@ -85,6 +85,9 @@
 \newcommand{\HFUTMonth}{6}
 \newcommand{\HFUTDay}{20}
 \newcommand{\HFUTScore}{}
+\newif\ifhfut@coverdate
+\newcommand{\HFUTEnableCoverDate}{\hfut@coverdatetrue}
+\newcommand{\HFUTDisableCoverDate}{\hfut@coverdatefalse}
 
 \newcommand{\HFUTTaskContent}{%
   一、课程设计第一部分\par
@@ -128,8 +131,8 @@
 
 % ===== 封面辅助命令 =====
 \newcommand{\HFUTCoverField}[2]{%
-  \makebox[38mm][l]{\song\bfseries\addCJKfontfeatures{FakeBold=2.5}\fontsize{22bp}{26bp}\selectfont #1：}%
-  \underline{\makebox[78mm][c]{\song\bfseries\addCJKfontfeatures{FakeBold=2.5}\fontsize{22bp}{26bp}\selectfont #2}}%
+  \makebox[38mm][l]{\song\bfseries\addCJKfontfeatures{FakeBold=2.5}\fontsize{20bp}{24bp}\selectfont #1：}%
+  \underline{\makebox[92mm][c]{\song\bfseries\addCJKfontfeatures{FakeBold=2.5}\fontsize{20bp}{24bp}\selectfont #2}}%
 }
 
 \newcommand{\HFUTCoverPage}{%
@@ -148,19 +151,25 @@
       }};
 
     \node[anchor=north,inner sep=0pt] at ([xshift=0mm,yshift=-67mm]current page.north)
-      {\hei\bfseries\addCJKfontfeatures{FakeBold=2.5}\fontsize{72bp}{86bp}\selectfont 课程设计};
+      {\hei\bfseries\addCJKfontfeatures{FakeBold=2.5}\fontsize{78bp}{92bp}\selectfont 课程设计};
 
-    \node[anchor=north west,inner sep=0pt] at ([xshift=46mm,yshift=-118mm]current page.north west){%
-      \begin{minipage}{125mm}
-        \setlength{\baselineskip}{18mm}
-        \HFUTCoverField{课程名称}{\HFUTDesignTitle}\\[5mm]
-        \HFUTCoverField{学生姓名}{\HFUTStudentName}\\[7mm]
-        \HFUTCoverField{学\hspace{1.2em}号}{\HFUTStudentID}\\[7mm]
-        \HFUTCoverField{专业班级}{\HFUTMajorClass}\\[7mm]
-        \HFUTCoverField{指导老师}{\HFUTAdvisor}\\[7mm]
+    \node[anchor=north west,inner sep=0pt] at ([xshift=40mm,yshift=-158mm]current page.north west){%
+      \begin{minipage}{138mm}
+        \setlength{\baselineskip}{13mm}
+        \HFUTCoverField{课程名称}{\HFUTDesignTitle}\\[3mm]
+        \HFUTCoverField{学生姓名}{\HFUTStudentName}\\[4mm]
+        \HFUTCoverField{学\hspace{1.2em}号}{\HFUTStudentID}\\[4mm]
+        \HFUTCoverField{专业班级}{\HFUTMajorClass}\\[4mm]
+        \HFUTCoverField{指导老师}{\HFUTAdvisor}\\[4mm]
         \HFUTCoverField{院系名称}{\HFUTDepartment}
       \end{minipage}%
     };
+
+    \ifhfut@coverdate
+      \node[anchor=north,inner sep=0pt] at ([xshift=0mm,yshift=-270mm]current page.north)
+        {\song\bfseries\addCJKfontfeatures{FakeBold=2.5}\fontsize{18bp}{22bp}\selectfont
+          \HFUTYear 年\HFUTMonth 月\HFUTDay 日};
+    \fi
   \end{tikzpicture}
   \null
   \clearpage
